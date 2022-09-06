@@ -1,5 +1,6 @@
 using BizSolTech_Assignment.Models;
 using System;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
