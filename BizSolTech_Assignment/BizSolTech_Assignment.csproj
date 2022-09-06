@@ -7,10 +7,17 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Models\" />
-    <Folder Include="Controllers\" />
-    <Folder Include="wwwroot\" />
-    <Folder Include="Views\" />
+    <None Include="wwwroot\js\Chart.js\.github\ISSUE_TEMPLATE.md" />
+    <None Include="wwwroot\js\Chart.js\.github\PULL_REQUEST_TEMPLATE.md" />
+    <None Include="wwwroot\js\Flot\.circleci\config.yml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.8" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="6.0.8">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
   </ItemGroup>
 
 </Project>

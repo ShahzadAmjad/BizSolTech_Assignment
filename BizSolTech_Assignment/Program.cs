@@ -1,18 +1,19 @@
+using BizSolTech_Assignment.Models;
 using System;
 
 var builder = WebApplication.CreateBuilder(args);
 
 
 //// Add services to the container.
-//builder.Services.AddControllersWithViews();
+builder.Services.AddControllersWithViews();
 
 ////db connection string
 
-//builder.Services.AddDbContextPool<AppDbContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("ETL_DBConnection"), sqlServerOptions => sqlServerOptions.CommandTimeout(60)));
+builder.Services.AddDbContextPool<AppDbContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("BIZSOL_DBConnection"), sqlServerOptions => sqlServerOptions.CommandTimeout(60)));
 
-//builder.Services.AddMvc(options => options.EnableEndpointRouting = false);
+builder.Services.AddMvc(options => options.EnableEndpointRouting = false);
 
-//builder.Services.AddScoped<IServiceRepository, SQLServiceRepository>();
+builder.Services.AddScoped<IDeveloperRepository, SQLDeveloperRepository>();
 
 
 
