@@ -5,13 +5,10 @@
 }
 
 <div class="mtop20">
-    @*<a asp-controller="Home" asp-action="AddDeveloper" class="btn btn-success">Add New Developer</a>*@
-
     <button type="button" class="btn btn-success" data-toggle="ajax-modal" id="AddDeveloperbtn" name="AddDeveloperbtn"
             data-target="#AddDeveloperModal" data-url="@Url.Action("AddDeveloper")">
         Add New Developer
     </button>
-
 </div>
 
 
@@ -46,7 +43,6 @@
     </table>
     @*Related To partial View*@
     <div name="PlaceHolderHere" id="PlaceHolderHere">
-        @*<partial name="_AddSecutityDetailBusniessPartialView" />*@
     </div>
 
 
