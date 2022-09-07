@@ -17,18 +17,6 @@ namespace BizSolTech_Assignment.Controllers
             return View("AllDevelopers", model);
         }
 
-        //[HttpGet]
-        //public IActionResult AddPropertySchedule()
-        //{
-        //    PropertySchedule propertySchedule = new PropertySchedule();
-        //    return PartialView("_AddPropertySchedulePartialView", propertySchedule);
-        //}
-        //[HttpPost]
-        //public IActionResult AddPropertySchedule(PropertySchedule propertySchedule)
-        //{
-
-        //}
-
         [HttpGet]
         public IActionResult AddDeveloper()
         {
@@ -39,7 +27,7 @@ namespace BizSolTech_Assignment.Controllers
         [HttpPost]
         public IActionResult AddDeveloper(Developer developer)
         {
-           // if(ModelState.IsValid)
+            if(ModelState.IsValid)
             {
                 _developerRepository.AddDeveloper(developer);
             }
