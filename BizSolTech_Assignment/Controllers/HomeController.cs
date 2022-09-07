@@ -20,8 +20,7 @@ namespace BizSolTech_Assignment.Controllers
         [HttpGet]
         public IActionResult AddDeveloper()
         {
-            Developer developer = new Developer();
-            return PartialView("_AddDeveloperPartialView", developer);
+            return PartialView("_AddDeveloperPartialView");
         }
 
         [HttpPost]
