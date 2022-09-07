@@ -1,0 +1,47 @@
+﻿@model Developer
+
+<div class="modal fade bd-example-modal-lg" id="AddDeveloperModal" tabindex="-1" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog  modal-lg">
+        <div class="modal-content">
+            
+            <div class="modal-header">
+                <h4 class="modal-title text-center" id="myModalLabel">Add New Developer</h4>
+                <button type="button" class="close " data-dismiss="modal" aria-hidden="true">&times;</button>
+            </div>
+
+            <div class="modal-body" id="ModalBody">
+                <form asp-controller="Home"  asp-action="AddDeveloper" id="AddDeveloperform" name="AddDeveloperform" >
+                    <div class="item form-group">
+                        <label asp-for="@Model.name" class="col-form-label col-md-3 col-sm-3 label-align">
+                            Name <span class="required">*</span>
+                        </label>
+                        <div class="col-md-6 col-sm-6 ">
+                            <input type="text" asp-for="@Model.name" id="name" name="name" required="required" class="form-control">
+                        </div>
+                    </div>
+                    <div class="item form-group">
+                        <label asp-for="@Model.age" class="col-form-label col-md-3 col-sm-3 label-align">
+                            Age<span class="required">*</span>
+                        </label>
+                        <div class="col-md-6 col-sm-6 ">
+                            <input asp-for="@Model.age" id="age" name="age" class="form-control" type="text">
+                        </div>
+                    </div>
+                    <div class="item form-group">
+                        <label asp-for="@Model.jobTitle" class="col-form-label col-md-3 col-sm-3 label-align">
+                            Job Title<span class="required">*</span>
+                        </label>
+                        <div class="col-md-6 col-sm-6 ">
+                            <input asp-for="@Model.jobTitle" id="jobTitle" name="jobTitle" class="form-control" type="text">
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-save="modal">Save</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>

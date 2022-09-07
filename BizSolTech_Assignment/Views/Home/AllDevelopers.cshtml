@@ -5,12 +5,18 @@
 }
 
 <div class="mtop20">
-    <a asp-controller="Home" asp-action="AddDeveloper" class="btn btn-success">Add New Developer</a>
+    @*<a asp-controller="Home" asp-action="AddDeveloper" class="btn btn-success">Add New Developer</a>*@
+
+    <button type="button" class="btn btn-success" data-toggle="ajax-modal" id="AddDeveloperbtn" name="AddDeveloperbtn"
+            data-target="#AddDeveloperModal" data-url="@Url.Action("AddDeveloper")">
+        Add New Developer
+    </button>
+
 </div>
 
 
 <div class="mtop20">
-    <table id="tblPropertyinfo" class="table table-bordered table-hover table-striped ">
+    <table id="tblDeveloperinfo" class="table table-bordered table-hover table-striped ">
         <thead class="thead-light">
             <tr>
                 <th id="Id">ID</th>
@@ -38,4 +44,41 @@
             }
         </tbody>
     </table>
+    @*Related To partial View*@
+    <div name="PlaceHolderHere" id="PlaceHolderHere">
+        @*<partial name="_AddSecutityDetailBusniessPartialView" />*@
+    </div>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script>
+
+        var PlaceHolderElement = $('#PlaceHolderHere');
+
+        //Show modal on Add Button click
+        $('button[data-toggle="ajax-modal" ]').click(function (event) {
+
+            var url = $(this).data('url');            
+
+            $.get(url).done(function (data) {
+                PlaceHolderElement.html(data);
+                $('#AddDeveloperModal').modal('show');
+            })
+        })
+        //Save Modal Data Add New Security detail
+        PlaceHolderElement.on('click', '[data-save="modal"]', function (event) {
+            
+            var form = $('#AddDeveloperform');
+            var actionurl = form.attr('action');
+            var sendData = form.serialize();
+
+            $.post(actionurl, sendData).done(function (data) {
+                $('#AddDeveloperModal').modal('hide');
+                //Reload Page after data Insertion
+                window.location.reload();
+            })
+        })
+
+
+    </script>
 </div>
