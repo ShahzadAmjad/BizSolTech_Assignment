@@ -9,11 +9,8 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 
 ////db connection string
-
 builder.Services.AddDbContextPool<AppDbContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("BIZSOL_DBConnection"), sqlServerOptions => sqlServerOptions.CommandTimeout(60)));
-
 builder.Services.AddMvc(options => options.EnableEndpointRouting = false);
-
 builder.Services.AddScoped<IDeveloperRepository, SQLDeveloperRepository>();
 
 
@@ -29,14 +26,9 @@ if (!app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();
-
 app.UseRouting();
-
 app.UseAuthorization();
-
-
 app.UseMvcWithDefaultRoute();
-
 
 //app.MapGet("/", () => "Hello World!");
 
